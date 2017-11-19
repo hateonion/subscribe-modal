@@ -7,5 +7,10 @@ import './index.css';
 $(document).ready(() => {
   $('#test-button').on('click', (e) => {
     e.preventDefault();
-  })
+    $('#subscribe-modal').css('display', 'flex');
+  });
+  $('#subscribe-modal-close').on('click', (e) => {
+    e.preventDefault();
+    $('#subscribe-modal').css('display', 'none');
+  });
 })
