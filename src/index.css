@@ -1,5 +1,90 @@
 body {
+  background-image: url('https://static.pexels.com/photos/33045/lion-wild-africa-african.jpg');
+  background-size: cover;
+}
+
+#subscribe-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  transition: all 0 ease-out 0.5s;
+}
+
+#subscribe-dialog {
+  background-color: #fefefe;
+  position: relative;
+  border-radius: 10px;
+  height: 200px;
+  width: 500px;
+  box-shadow: 2px 2px 5px grey;
+  padding-left: 20px;
+}
+
+#subscribe-modal-close {
+  outline: none;
+  background: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: gray;
+}
+
+#subscribe-modal-header {
+  color: #F86254;
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  font-size: 30px;
+  text-align: left;
+  padding: 20px 0;
+}
+
+#subscribe-modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+#subscribe-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#subscribe-modal-desc {
+  font-size: 20px;
+  color: #393939;
+}
+
+#subscribe-modal-inputfield {
+  display: flex;
+  width: 100%;
+}
+
+#subscribe-modal-input {
+  flex-grow: 1;
+  background: #f1f1f1;
+  color: #6E828A;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+#subscribe-modal-submit {
+  color: #fefefe;
+  background-color: #E75151;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 40px;
 }
