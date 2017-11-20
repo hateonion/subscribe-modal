@@ -33,7 +33,7 @@ module.exports = {
   // This means they will be the "root" imports that are included in JS bundle.
   // The first two entry points enable "hot" CSS and auto-refreshes for JS.
   externals: {
-    jquery: '$',
+    jquery: 'jQuery',
   },
   entry: [
     // We ship a few polyfills by default:
