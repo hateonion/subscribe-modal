@@ -16,6 +16,7 @@ body {
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.5);
   margin: 0 auto;
+  transition: all 2s ease-out;
 }
 
 #subscribe-dialog {
@@ -26,7 +27,6 @@ body {
   box-shadow: 2px 2px 5px grey;
   padding-left: 20px;
   border-radius: 2px;
-  transition: all 2s ease-out;
 }
 
 #subscribe-modal-close {
@@ -89,7 +89,7 @@ body {
   font-size: 20px;
   padding: 10px;
   margin-left: 5px;
-  margin-right: 40px;
+  margin-right: 20px;
   border-radius: 2px;
   cursor: pointer;
   opacity: 1;
@@ -97,4 +97,47 @@ body {
 
 #subscribe-modal-submit:hover {
   opacity: 0.75;
+}
+
+@media screen and (max-width: 575px) and (orientation: portrait) {
+  #subscribe-dialog {
+    height: 300px;
+    width: 250px;
+    padding: 0;
+  }
+
+  #subscribe-content {
+    height: 100%;
+    padding: 0 20px;
+  }
+
+  #subscribe-modal-header {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  #subscribe-modal-form {
+    flex-grow: 1;
+    align-items: center;
+  }
+
+  #subscribe-modal-desc {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  #subscribe-modal-input {
+    text-align: center;
+    flex-grow: 0;
+  }
+
+  #subscribe-modal-inputfield {
+    flex-direction: column;
+  }
+
+  #subscribe-modal-submit {
+    margin: 10px 0;
+  }
+
 }
