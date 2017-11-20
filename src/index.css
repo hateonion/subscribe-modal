@@ -90,4 +90,10 @@ body {
   margin-left: 5px;
   margin-right: 40px;
   border-radius: 2px;
+  cursor: pointer;
+  opacity: 1;
+}
+
+#subscribe-modal-submit:hover {
+  opacity: 0.75;
 }
