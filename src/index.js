@@ -5,12 +5,13 @@ import _ from 'lodash';
 import './index.css';
 
 $(document).ready(() => {
-  if(Cookies.get('IsNewsLetterSubscribed')) {
+  if(Cookies.get('IsNewsLetterSubscribed') || Cookies.get('IsUserManualClose')) {
     return;
   }
   $('#subscribe-modal').css('display', 'flex');
   $('#subscribe-modal-close').on('click', (e) => {
     e.preventDefault();
+    Cookies.set('IsUserManualClose', true, { expires: 1});
     $('#subscribe-modal').css('display', 'none');
   });
   $('#subscribe-modal-submit').on('click', () => {
