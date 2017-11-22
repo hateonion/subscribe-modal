@@ -3,21 +3,29 @@ import * as Cookies from 'js-cookie';
 import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
 
-const popupModal = () => {
-    $('#subscribe-modal').css('transform', 'scale(1)');
-}
+const toggleModal = isOpen => {
+    const $d = $('#subscribe-modal');
+    if (isOpen) {
+        $d.addClass('is-opening');
+        setTimeout(() => $d.addClass('is-active'), 300);
+    } else {
+        $d.removeClass('is-active');
+        setTimeout(() => $d.removeClass('is-opening'), 300);
+    }
+};
 
 $(document).ready(() => {
-  if(Cookies.get('IsNewsLetterSubscribed') || Cookies.get('IsUserManualClose')) {
-    return;
-  }
-    window.setTimeout(popupModal, 500);
-  $('#subscribe-modal-close').on('click', (e) => {
-    e.preventDefault();
-    Cookies.set('IsUserManualClose', true, { expires: 1});
-      $('#subscribe-modal').css('transform', 'scale(0)');
-  });
-  $('#subscribe-modal-submit').on('click', () => {
-    Cookies.set('IsNewsLetterSubscribed', true);
-  })
+    if(Cookies.get('IsNewsLetterSubscribed') || Cookies.get('IsUserManualClose')) {
+        return;
+    }
+    toggleModal(true);
+    $('#subscribe-modal-close').on('click', (e) => {
+        e.preventDefault();
+        Cookies.set('IsUserManualClose', true, { expires: 1});
+        toggleModal(false);
+    });
+    $('#subscribe-modal-submit').on('click', () => {
+        Cookies.set('IsNewsLetterSubscribed', true);
+        toggleModal(false);
+    })
 })
