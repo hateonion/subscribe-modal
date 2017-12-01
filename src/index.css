@@ -68,6 +68,7 @@
   font-size: 30px;
   text-align: left;
   padding: 20px 0;
+  font-family: -apple-system,Helvetica,Arial,sans-serif;
 }
 
 #subscribe-modal-form {
@@ -102,6 +103,10 @@
   padding: 10px;
   border-radius: 2px;
   margin-bottom: 0px;
+}
+
+#subscribe-modal-input::placeholder {
+  color: #bbb;
 }
 
 #subscribe-modal-submit {
